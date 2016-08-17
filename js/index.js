@@ -7,7 +7,7 @@
 			obj=obj.offsetParent;
 		}
 		return {'top':t,'left':l}
-	}
+	};
 	function getByClass(obj,sClass){
 		var aRes=[];
 		var aEl=obj.getElementsByTagName('*');
@@ -18,7 +18,7 @@
 			}
 		}
 		return aRes;
-	}
+	};
 	function getDir(obj,ev){
 		var scrollT=document.documentElement.scrollTop||document.body.scrollTop;
 		var scrollL=document.documentElement.scrollLeft||document.body.scrollLeft;
@@ -29,7 +29,7 @@
 		/*alert(x);*/
 		
 		return Math.round((Math.atan2(y,x)*180/Math.PI+180)/90)%4;
-	}
+	};
 	function through(obj){
 		var oS=obj.children[1];
 		obj.onmouseenter=function(ev){
@@ -54,9 +54,9 @@
 					oS.style.left='0';
 					oS.style.top=-obj.offsetHeight-2+'px';
 					break;
-			}
+			};
 			startmove(oS,{left:0,top:0,opacity:0.9});
-		}
+		};
 		obj.onmouseleave=function(ev){
 			var oEvent=ev||event;
 			var dir=getDir(obj,oEvent);
@@ -73,10 +73,9 @@
 				case 3:
 					startmove(oS,{left:0,top:-obj.offsetHeight-2,opacity:0});
 					break;
-			}
-		}
-		
-	}
+			};
+		};
+	};
 	function setStyle3(obj, name, value){
         var newName=name.charAt(0).toUpperCase()+name.substring(1);
         obj.style['Webkit'+newName]=value;
@@ -84,12 +83,12 @@
         obj.style['ms'+newName]=value;
         obj.style['O'+newName]=value;
         obj.style[name]=value;
-    }
+    };
 	//daohang
 	window.onload=function(){
 
 		var oFocus=getByClass(document.body,'focus')[0];
-		var oFocus_img=oFocus.getElementsByTagName('img')[0];
+		var oFocus_img=oFocus.getElementsByTagName('img')[1];
 		var oFocus_img1=oFocus.getElementsByTagName('img')[1];
 		var oBar=getByClass(document.body,'bar')[0];
 		var navBtn=getByClass(document.body,'nav_btn')[0];
@@ -128,7 +127,7 @@
 		resize();
 		window.onresize=function(){
 			resize();
-		}
+		};
 		function resize(){
 			clientH=document.documentElement.clientHeight;
 			clientW=document.documentElement.clientWidth;
@@ -136,17 +135,19 @@
 			scrT=document.documentElement.scrollTop||document.body.scrollTop;
 			for(var i=0;i<aWorks.length;i++){
 				aWorks[i].style.height=clientH+'px';
-			}
+			};
 			for(var i=0;i<workUl.length;i++){
 				workUl[i].style.width=clientW*0.8+'px';
-			}
+			};
+			oFocus.style.height=clientH+'px';
+			document.body.style.paddingTop=oFocus.offsetHeight+'px';
 			oFocus_img.style.left=document.documentElement.clientWidth/2+'px';
 			oFocus_img1.style.left='50%';
 			oLeft=oFocus_img.offsetLeft;
 			oTop=oFocus_img.offsetTop;
 			x=oFocus.offsetWidth/2;
 			y=oFocus.offsetHeight/2;
-		}
+		};
 		workUl[iNow].style.display='block';
 		workUl[iNow].children[0].style.left='0';
 		workUl[iNow].children[1].style.right='0';
@@ -172,11 +173,11 @@
 						clearInterval(timer);
 					}
 				},50)
-			}
+			};
 			navBtn.onmouseout=function(){
 				timer3=setTimeout(show,100);
 				navUl.style.display='block';
-			}
+			};
 		}else{
 
 			navBtn.onclick=function(){
@@ -200,18 +201,18 @@
 				}else{
 					timer3=setTimeout(show,100);
 					navUl.style.display='block';
-				}
+				};
 					
-			}
+			};
 			
-		}
+		};
 		
 		navUl.onmouseover=function(){
 			clearTimeout(timer3)
-		}
+		};
 		navUl.onmouseout=function(){
 			timer3=setTimeout(show,100);
-		}
+		};
 		function show(){
 			var n=navLi.length-1;
 			clearInterval(timer1);
@@ -233,25 +234,36 @@
 				})(n)
 					n--;
 			},100)
-		}
+		};
 		//li样式
 		for(var i=0;i<navLi.length;i++){
-			navLi[i].onmouseover=function(){
-				this.children[1].children[0].style.color='#e70000';
-				startmove(this.children[0],{opacity:1});
-				startmove(this.children[1],{left:28},{duration:400});
-			}
-			navLi[i].onmouseout=function(){
-				this.children[1].children[0].style.color='#fff';
-				startmove(this.children[0],{opacity:0});
-				startmove(this.children[1],{left:18},{duration:400});
-			}
-		}
-		navLi[0].onclick=function(){
+			(function(index){
+				navLi[i].onmouseover=function(){
+					this.children[1].children[0].style.color='#e70000';
+					startmove(this.children[0],{opacity:1});
+					startmove(this.children[1],{left:28},{duration:400});
+				};
+				navLi[i].onmouseout=function(){
+					this.children[1].children[0].style.color='#fff';
+					startmove(this.children[0],{opacity:0});
+					startmove(this.children[1],{left:18},{duration:400});
+				};
+				if(i==0){
+					navLi[i].onclick=function(){
+						scrMove(navUl,1,800);
+					};
+				}else{
+					navLi[i].onclick=function(){
+						scrMove(navUl,index*clientH,800);
+					};
+				};
+			})(i)	
+		};
+		/*navLi[0].onclick=function(){
 			scrMove(navUl,1,800);
 		}
 		navLi[1].onclick=function(){
-			scrMove(navUl,560,800);
+			scrMove(navUl,clientH,800);
 		}
 		navLi[2].onclick=function(){
 			scrMove(navUl,560+clientH,800);
@@ -261,14 +273,14 @@
 		}
 		navLi[4].onclick=function(){
 			scrMove(navUl,560+3*clientH,900);
-		}
+		}*/
 		//焦点移入
 		oFocus.onmouseover=function(){
 			startmove(oBar,{opacity:1});
-		}
+		};
 		oFocus.onmouseout=function(){
 			startmove(oBar,{opacity:0});
-		}
+		};
 		
 		var timer5=null;
 		oFocus.onmouseenter=function(){
@@ -282,27 +294,27 @@
 				var disY=clientY-y;
 				oFocus_img.style.left=oLeft-disX/7+300+'px';
 				/*oFocus_img.style.top=oTop-disY/10+125+'px';*/
-			}
+			};
 			oFocus.onmouseleave=function(ev){
 				document.onmousemove=null;
 				/*timer5=setTimeout(function(){
 					startmove(oFocus_img,{left:oLeft+300,top:oTop+125})
 				},1000)*/
-			}
-		}
+			};
+		};
 			
 			/*oFocus.onmouseleave=function(ev){
 				startmove(oFocus_img,{left:oLeft+300,top:oTop+125})
 			}*/
 		//穿墙
 		for(var i=0;i<workLi.length;i++){
-			(function(index){
+			/*(function(index){
 				if(index<5){
 					workLi[index].children[0].style.top=workLi[index].offsetHeight+'px';
 				}
-			})(i)
+			})(i);*/
 			through(workLi[i]);
-		}
+		};
 
 		
 		var timer6;
@@ -312,7 +324,7 @@
 			var n=0;
 			/*addWheel(document.body,sc)*/
 			addWheel(document.body,sc)
-			if(scrT+clientH>workLi[0].offsetTop){
+			/*if(scrT+clientH>workLi[0].offsetTop){
 				var i=0;
 				timer6=setInterval(function(){
 					startmove(workLi[i].children[0],{top:0},{duration:300});
@@ -322,51 +334,54 @@
 						i=0;
 					}
 				},500)
-			}
-		}
+			};*/
+		};
 
 			/*addWheel(document.body,sc)*/
 		addWheel(document.body,sc)
 		var timeout=null;
 		var bReady=false;
 		function sc(bDown){
+			
 			if(bReady) return;
 			bReady=true;
 			if(bDown==true){
-				if(scrT>=0&&scrT<560){
+				if(scrT>=0&&scrT<clientH){
 					scroll1();
-				}else if(scrT>=560&&scrT<560+clientH){
+				}else if(scrT>=clientH&&scrT<2*clientH){
 					scroll2();
-				}else if(scrT>=560+clientH&&scrT<560+2*clientH){
+				}else if(scrT>=2*clientH&&scrT<3*clientH){
 					scroll3();
-				}else if(scrT>=560+2*clientH&&scrT<560+3*clientH){
-					scrMove(navUl,560+3*clientH,900);
+				}else if(scrT>=3*clientH&&scrT<4*clientH){
+					scrMove(navUl,4*clientH,900);
 					aWorks[3].style.animation='1s rot ease-in forwards';
 					clearTimeout(timeout);
 					timeout=setTimeout(function(){ 
 						aWorks[3].style.animation='none';
 						bReady=false;
 					},1000); 
-				}
+				}else if(scrT>=4*clientH){
+					bReady=false;
+				};
 			}else{
-				if(scrT>=1&&scrT<=560){
+				if(scrT>=1&&scrT<=clientH){
 					scrMove(navUl,1,800);
 					timeout=setTimeout(function(){ 
 						bReady=false;
 					},800); 
-				}else if(scrT>560&&scrT<=560+clientH){
+				}else if(scrT>clientH&&scrT<=2*clientH){
 					scroll1();
-				}else if(scrT>560+clientH&&scrT<=560+2*clientH){
+				}else if(scrT>2*clientH&&scrT<=3*clientH){
 					scroll2();
-				}else if(scrT>560+2*clientH&&scrT<=560+3*clientH){
+				}else if(scrT>3*clientH&&scrT<=4*clientH){
 					scroll3();
-				}
-			}
-		}
+				};
+			};
+		};
 		//选项卡
 		function scroll1(){
 			tab.style.opacity=0;
-			scrMove(navUl,560,800);
+			scrMove(navUl,clientH,800);
 
 /*					aWorks[0].style.transformOrigin='top center';
 			aWorks[0].style.transform='rotateX(30deg)';*/
@@ -379,9 +394,9 @@
 			setStyle3(tab, 'animation', 'none');
 				bReady=false;
 			},1200); 
-		}
+		};
 		function scroll2(){
-			scrMove(navUl,560+clientH,800);
+			scrMove(navUl,2*clientH,800);
 			resume.style.opacity=0;
 			setStyle3(aWorks[1], 'animation', '1s rot ease-in forwards');
 			setStyle3(resume, 'animation', '0.4s rot3 ease-in forwards .8s');
@@ -392,9 +407,9 @@
 				setStyle3(resume, 'animation', 'none');
 				bReady=false;
 			},1200); 
-		}
+		};
 		function scroll3(){
-			scrMove(navUl,560+2*clientH,900);
+			scrMove(navUl,3*clientH,900);
 			adageBox.style.opacity=0;
 			setStyle3(aWorks[2], 'animation', '1s rot ease-in forwards');
 			setStyle3(adageBox, 'animation', '0.4s rot3 ease-in forwards 1s');
@@ -405,26 +420,26 @@
 				setStyle3(adageBox, 'animation', 'none');
 				bReady=false;
 			},1200); 
-		}
+		};
 		toRightBtn.onclick=function(){
 			var newNow=iNow+1;
 			if(newNow==3) newNow=0;
 			tabb(newNow);
-		}
+		};
 		toLeftBtn.onclick=function(){
 			var newNow=iNow-1;
 			if(newNow==-1) newNow=2;
 			tabb(newNow);
-		}
+		};
 		for(var i=0;i<tabBtn.length;i++){
 			tabBtn[i].index=i;
 			tabBtn[i].onmouseover=function(){
 				if(iNow!=this.index){
 					var ind=this.index;
 					tabb(ind);
-				}
-			}
-		}
+				};
+			};
+		};
 		function tabb(inde){
 			startmove(workUl[iNow].getElementsByTagName('div')[0],{left:'-400',opacity:'0'},{duration:500});
 			startmove(workUl[iNow].getElementsByTagName('div')[1],{right:'-400',opacity:'0'},{duration:500,complete:function(){
@@ -436,9 +451,9 @@
 			}});
 			for(var j=0;j<tabBtn.length;j++){
 				tabBtn[j].className='';
-			}
+			};
 			tabBtn[inde].className='on';
-		}
+		};
 		for(var i=0;i<resLi.length;i++){
 			resLi[i].index=i;
 			resLi[i].onmouseover=function(){
@@ -448,6 +463,6 @@
 				}
 				resLi[this.index].className='on';
 				resDiv[this.index].className='intro on';
-			}
-		}
-	}
+			};
+		};
+	};
