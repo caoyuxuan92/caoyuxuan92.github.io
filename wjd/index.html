@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style type="text/css">
+    	*{margin:0;padding: 0;list-style: none}
+    	body{background:#fafafa;overflow-x:hidden;}
+    	.box header{height:2rem;background:#99ca00;border-bottom:0.2rem solid #6a9603;margin-bottom: 0.95rem }
+    	.box header img{width:2.15rem;height:1.2rem;margin:0.4rem 0 0 0.5rem;float: left}
+    	.type_btn{width:2rem;height:1.2rem;background: #fff;border-radius: 0.2rem;border:none;float: left;margin:0.4rem 0 0 0.65rem;font-size:0.45rem;}
+    	.search{width:7.4rem;height:1.2rem;float: left;border-radius: 0.6rem;border:none;background: url(images/wjd_05.jpg);margin:0.4rem 0 0 0.4rem;background-size:contain;}
+    	.search_btn{float:left;width:2rem;height:1.2rem;line-height:1.2rem;background: url(images/wjd_07.jpg);background-size:contain;border-radius: 0.6rem;border:none;margin:0.4rem 0 0 0.4rem;font-size:0.45rem;color:#fff;}
+    	.focus{width:15rem;height:5rem;margin:0.95rem 0 0 0.5rem;overflow: hidden;}
+    	.focus ul{overflow: hidden;width:75rem;transform: translateX(-15rem);}
+    	.focus li{width:15rem;height:5rem;float: left;}
+    	.focus li img{width:15rem;height:5rem;}
+        .swiper-container{
+            width:15rem;height:5rem;
+        }
+        .swiper-slide {
+            text-align: center;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .swiper-slide img{width:15rem;height:5rem;}
+    	nav{width:14.8rem;margin:0.6rem 0 0 0.6rem;}
+    	nav ul{overflow: hidden;}
+    	nav ul li{float: left;width:4.7rem;height:1.8rem;border-radius: 0.15rem/0.2rem;border:0.05rem solid #efefef;margin-right:0.2rem;margin-bottom:0.2rem;}
+    	nav ul li span{height:0.975rem;padding-left: 1.45rem;font-size: 0.55rem;float: left;margin:0.6rem 0 0 0.7rem;}
+    	.recom{width:15rem;margin:1.3rem 0 0.75rem 0.5rem;border-top:1px solid #e1e1e1;height:7rem;float: left;}
+    	.recom_ti{font-size:0.65rem;font-weight: bold;float: left;display: block;width:4.675rem;height:0.65rem;background:#fafafa;margin-top:-0.32rem }
+    	.recom_l{float:right;display: block;font-style:normal;font-size:0.4rem;height:0.4rem;padding-left:0.5rem;background:#fafafa;color:#d5d5d5;margin:-0.3rem 0 0 0;}
+    	.recom ul{overflow: hidden;margin-top:1.25rem ;width:18.75rem;}
+    	.recom ul li{float:left;width:3.75rem;margin-right: 0.8rem}
+    	.recom ul li img{width:3.75rem;height:3.75rem;float: left;}
+    	.recom ul li p{font-size:0.45rem;float: left;margin-top: 0.5rem}
+    	.recom ul li span{float:left;display: block;width:3.75rem;height:0.65rem;margin-top:0.4rem;}
+    	.recom ul li span img{width:0.75rem;height:0.65rem;}
+    	.recom .head{overflow: hidden;margin-top:1.25rem ;width:39.6rem;}
+    	.recom .head li{float:left;width:12.4rem;height:5rem;background:#fff;border-radius:0.2rem;border:0.05rem solid #e8e8e8;margin-right: 0.8rem}
+    	.recom .head li img{width:4rem;height:4rem;margin:0.5rem 0 0 0.5rem;float:left;}
+    	.recom .head li p{font-size: 0.55rem;float:left;color: #000;width: 6rem;margin:0.7rem 0 0 0.55rem;}
+    	.recom .head li span{font-size:0.45rem;float: left;margin:1.5rem 0 0 3rem;width:4.7rem;}
+    	.recom .inter{overflow: hidden;margin-top:1.25rem ;width:35.4rem;}
+    	.recom .inter li{float:left;width:11rem;height:5rem;border-radius:0.2rem;margin-right: 0.8rem}
+    	.recom .inter li img{width:11rem;height:5rem;}
+    	footer{width:15rem;height:2.8rem;background: #f2f2f2;float: left;margin:0.6rem 0 0 0.5rem;}
+    	footer img{width:2rem;height:2rem;border:0.2rem solid #fff;border-radius: 0.275rem;text-shadow: 0 0 5px #666;margin-top: 0.4rem;float: left;}
+    	footer p,footer h4{font-size: 0.45rem;font-weight:normal;float: left;}
+    	footer p{margin-top: 0.65rem;margin-left: 2.2rem}
+    	footer h4{margin-top: 0.6rem;margin-left: 0.6rem}
+    </style>
+    <link rel="stylesheet" href="swiper.min.css">
+    <script src="swiper.min.js"></script>
+    <script type="text/javascript">
+    	;(function(win,doc){
+    		function change(){
+    			doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px';
+    		}
+    		change();
+    		win.addEventListener('resize',function(){
+    			change();
+    		},false);
+    	})(window,document);
+        window.onload=function(){
+            var swiper = new Swiper('.swiper-container',{
+                pagination: '.swiper-pagination',
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                paginationClickable: true,
+                spaceBetween: 30,
+                centeredSlides: true,
+                autoplay: 2500,
+                autoplayDisableOnInteraction: false
+            });
+        }
+            
+    	/*document.addEventListener('DOMContentLoaded',function(){
+    		var oUl=document.querySelector('.focus ul');
+    		var aLi=oUl.children;
+    		var x=-aLi[0].offsetWidth;
+    		var iNow=1;
+    		var bReady=false;
+    		oUl.addEventListener('touchstart',function(ev){
+    			if(bReady)return;
+    			bReady=true;
+    			oUl.style.transition='none';
+    			var downX=ev.targetTouches[0].pageX;
+                var disX=downX-x;
+                function fnMove(ev){
+                    x=ev.targetTouches[0].pageX-disX;
+                    oUl.style.WebkitTransform='translate('+x+'px, 0)';
+                }
+                function fnEnd(ev){
+                    document.removeEventListener('touchmove', fnMove, false);
+                    document.removeEventListener('touchend', fnEnd, false);
+
+                    var upX=ev.changedTouches[0].pageX;
+
+                    if(Math.abs(upX-downX)>50){
+                        if(downX>upX){
+                            iNow++;
+                            if(iNow>=aLi.length)iNow=aLi.length-1;
+                        }else{
+                            iNow--;
+                            if(iNow<0)iNow=0;
+                        }
+                    }
+                    x=-iNow*aLi[0].offsetWidth;
+                    oUl.style.transform='translate('+x+'px, 0)';
+                    oUl.style.transition='.4s all ease';
+                    oUl.addEventListener('transitionend', function(){
+                        if(iNow==0){
+                            iNow=aLi.length-2;
+                        }
+                        if(iNow==aLi.length-1){
+                            iNow=1;
+                        }
+                        x=-iNow*aLi[0].offsetWidth;
+                        oUl.style.transition='none';
+                        oUl.style.transform='translateX('+x+'px)';
+                        bReady=false;
+                    }, false);
+                }
+                document.addEventListener('touchmove', fnMove, false);
+                document.addEventListener('touchend', fnEnd, false);
+                ev.preventDefault();
+    		},false);
+    	},false);*/
+    </script>
+</head>
+<body>
+	<div class="box">
+		<header>
+			<img src="images/wjd_03.jpg">
+			<input type="button" name="" value="网游" class="type_btn">
+			<input type="text" name="" class="search">
+			<input type="button" name="" value="搜索" class="search_btn">
+		</header>
+		<!-- <div class="focus">
+            <ul>
+                <li><img src="images/wjd_12.jpg"></li>
+                <li><img src="images/wjd_12.jpg"></li>
+                <li><img src="images/wjd_12.jpg"></li>
+                <li><img src="images/wjd_12.jpg"></li>
+                <li><img src="images/wjd_12.jpg"></li>
+            </ul>
+        </div> -->
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div style="background: #1d71d9;" class="swiper-slide"><img src="images/wjd_12.jpg"></div>
+                <div style="background: #ff64cc;" class="swiper-slide"><img src="images/wjd_12.jpg"></div>
+                <div style="background: #ffac6f;" class="swiper-slide"><img src="images/wjd_12.jpg"></div>
+                <div style="background: #f2ff1f;" class="swiper-slide"><img src="images/wjd_12.jpg"></div>
+            </div>
+            <!--进度条-->
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+
+		<nav>
+			<ul>
+				<li><span style="background:url(images/wjd_19.jpg) no-repeat;background-size:0.85rem 0.65rem">玩网游</span></li>
+				<li><span style="background:url(images/wjd_16.jpg) no-repeat;background-size:0.85rem 0.65rem">玩网游</span></li>
+				<li style="margin-right:0"><span style="background:url(images/wjd_22.jpg) no-repeat;background-size:0.85rem 0.65rem">玩网游</span></li>
+				<li><span style="background:url(images/wjd_31.jpg) no-repeat;background-size:0.85rem 0.65rem">玩网游</span></li>
+				<li><span style="background:url(images/wjd_33.jpg) no-repeat;background-size:0.85rem 0.65rem">玩网游</span></li>
+				<li style="margin-right:0"><span style="background:url(images/wjd_28.jpg) no-repeat;background-size:0.85rem 0.65rem">玩网游</span></li>
+			</ul>
+		</nav>
+		<div class="recom">
+			<span class="recom_ti">推荐手机游戏</span>
+			<i class="recom_l">< · ></i>
+			<ul>
+				<li><img src="images/wjd_38.jpg"><p>时空猎人</p><span><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""></span></li>
+				<li><img src="images/wjd_38.jpg"><p>时空猎人</p><span><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""></span></li>
+				<li><img src="images/wjd_38.jpg"><p>时空猎人</p><span><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""></span></li>
+				<li style="margin-right:0"><img src="images/wjd_38.jpg"><p>时空猎人</p><span><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""><img src="images/wjd_47.jpg""></span></li>
+			</ul>
+		</div>
+		<div class="recom">
+			<span class="recom_ti">每日手游头条</span>
+			<i class="recom_l">< · ></i>
+			<ul class="head">
+				<li><img src="images/wjd_55.jpg"><p>育碧竞速大作《特技摩托：前线》4月上架</p><span>行业动态-3月25日</span></li>
+				<li><img src="images/wjd_55.jpg"><p>育碧竞速大作《特技摩托：前线》4月上架</p><span>行业动态-3月25日</span></li>
+				<li style="margin-right:0"><img src="images/wjd_55.jpg"><p>育碧竞速大作《特技摩托：前线》4月上架</p><span>行业动态-3月25日</span></li>
+			</ul>
+		</div>
+		<div class="recom" style="margin-top:0">
+			<span class="recom_ti">每日手游头条</span>
+			<i class="recom_l">< · ></i>
+			<ul class="inter">
+				<li><img src="images/wjd_57.jpg"></li>
+				<li><img src="images/wjd_57.jpg"></li>
+				<li style="margin-right:0"><img src="images/wjd_57.jpg"></li>
+			</ul>
+		</div>
+		<footer>
+			<img src="images/wjd_61.jpg">
+			<p>WAP版|桌面版|帮助中心</p>
+			<h4>2010-2013 Wanjidao.All Rights Reserved</h4>
+		</footer>
+	</div>
+</body>
+</html>

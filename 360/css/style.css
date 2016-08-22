@@ -1,0 +1,152 @@
+@charset "utf-8";
+/* CSS Document */
+
+	body{margin:0 auto;width:100%;}
+	ul{margin:0px;padding:0px;list-style:none;}
+	#top{width:100%;height:132px;}
+	#top_main{margin:0 auto;width:980px;height:91px;}
+	#logo{background:url(../images/ww_360kan_com_06.jpg);width:178px;height:49px;margin-top:20px;float:left}
+	#top_main input{background:#fff;border:2px solid #3aa60d;height:28px;width:308px;float:left;margin:28px 0 0 24px;}
+	#serch_btn{background:url(../images/ww_360kan_com_09.jpg) repeat-x;height:32px;width:64px;float:left;margin:28px 0 0 0;border:1px solid #3aa60d;color:#fff;text-align:center;font-size:16px;line-height:32px}
+	#my360{margin:37px 0 0 5px;float:left}
+	#my360 ul li{float:left;font-size:13px;width:80px;text-align:center}
+	#my360 ul li a{color:#000;text-decoration:none}
+	#my360 ul li a:hover{color:#06F}
+	.triangle{border-color:#999 #fff #fff #fff;border-style:solid;border-width:5px 4px 0 4px;height:0px;width:0px;margin-left:-30px;float:right;margin-top:5px;position:relative;left:0px;}
+	#gaofen{width:202px;height:72px;background:url(../images/ww_360kan_com_03.jpg);float:right;margin:10px 0 0 0}
+	#nav{height:41px;width:100%;background:url(../images/ww_360kan_com_15.jpg) repeat-x;}
+	#nav_main{width:980px;margin:0 auto;height:28px;padding-top:13px;}
+	#nav1 ul li{color:#fff;font-size:17px;font-weight:bold;float:left;width:57px;text-align:center;border-right:#30970b 1px solid;height:20px;line-height:20px}
+	#nav2 ul{list-style:none;margin:0;padding:0;}
+	#nav2 ul li{color:#fff;font-size:12px;float:right;text-align:center;height:20px;line-height:20px;padding:0 10px;}
+	
+	#main{width:980px;margin:10px auto;height:5274px;}
+	#focus{width:980px;height:346px;}
+	#focus_left{float:left;position:relative}
+	#focus_left ul{position:absolute;right:5px;bottom:20px;}
+	#focus_left li{width:12px;height:12px;float:left;margin-right:18px;background:url(../images/111.png);}
+	#focus_left li.active{background:url(../images/222.png);}
+	#focus_right{width:230px;height:346px;background:#3f3f3f;float:left}
+	#topUl li{color:#999;font-size:12px;font-weight:bold;float:left;text-align:center;height:36px;line-height:36px;padding:0 6px;background:#303030;margin:5px 0 0 4px;position:relative}
+	#topUl li.active{background:#4f4f4f;color:#fff;}
+	#topUl li em{display: block;border-width: 5px;position: absolute;left:50%;top:100%;margin-left:-3px;border-style: solid dashed dashed;border-color: #4f4f4f transparent transparent; font-size: 0;line-height: 0;display:none}
+	#bottomUl ul{float:left}
+	#bottomUl li{color:#fff;font-size:12px;height:24px;line-height:24px;margin:6px 0 0 8px;width:210px}
+	#bottomUl li span{width:17px;height:16px;line-height:16px;background:#ff6d00;display:inline-block;text-align:center;margin-right:10px}
+	#bottomUl li p{margin:0;padding:0;display:inline-block;float:right;height:24px;line-height:24px;color:#999;width:70px;text-align:right;background:url(../images/ww_360kan_com_26.jpg) no-repeat left;}
+	#sjb{margin-top:22px;height:142px}
+	.title1{width:100%;height:36px;background:url(../images/ww_360kan_com_31.jpg);position:relative;}
+	.title1 span{height:26px;line-height:26px;background:url(../images/ww_360kan_com_34.jpg) no-repeat;;display:inline-block;text-align:center;margin-right:10px;margin:5px 0 0 15px;width:85px;font-size:18px;text-align:right;font-weight:bold;float:left;}
+	.title1 p{font-size:13px;margin:8px;padding:0;display:inline-block;float:right;height:18px;line-height:18px;width:50px;text-align:right;background:url(../images/ww_360kan_com_37.jpg) no-repeat left;}
+	.title1 ul{float:left;position:absolute;left:145px}
+	.title1 ul li{float:left;height:36px;line-height:36px;border-right:#e7e7e7 1px solid;border-left:#e7e7e7 1px solid;width:60px;text-align:center;margin-left:-1px;}
+	.title1 ul li.active{background:#fff;border-top:2px solid #3eaf0e;color:#3eaf0e;font-weight:bold;margin-top:-2px}
+	.long_content{margin-top:20px;}
+	.long_content ul{width:100%;}
+	.long_content ul li{width:150px;height:84px;position:relative;float:left;margin-right:16px;}
+	.long_content ul li span{display:block;position:absolute;width:100%;height:23px;line-height:23px;top:61px;right:0;background:#000;background-color:#000000;background-color:rgba(0,0,0,0.5);color:#fff;font-size:12px;text-align:center}
+	#hot{margin-top:22px;height:340px}
+	#hot_content{margin-top:20px;}
+	#hot_content ul{width:100%;}
+	#hot_content ul li{width:150px;height:84px;position:relative;float:left;margin-left:16px;margin-bottom:16px;}
+	#hot_content ul li span{display:block;position:absolute;width:100%;height:23px;line-height:23px;top:61px;background:#000;background-color:#000000;background-color:rgba(0,0,0,0.5);color:#fff;font-size:12px;text-align:center}
+	.tab img{float:left}
+	.tv{margin-top:40px;height:580px;}
+	.tvleft_content{margin-top:20px;float:left}
+	.tvleft_content ul{width:706px;}
+	.tvleft_content ul li{width:125px;height:218px;position:relative;float:left;margin-right:20px;margin-bottom:12px;text-align:center;}
+	.tvleft_content ul li.active{background:#fff;border-top:2px solid #3eaf0e;color:#3eaf0e;font-weight:bold;margin-top:-2px}
+	.tvleft_content ul li span{display:block;position:absolute;width:100%;height:23px;line-height:23px;top:144px;background:#000;background-color:rgba(0,0,0,0.5);color:#fff;font-size:12px;text-align:center}
+	.tvleft_content ul li h4{font-weight:normal;margin:175px 0 5px 0;display:block;}
+	.tvleft_content ul li h4 i{width:14px;height:14px;display:inline-block;background:url(../images/ww_360kan_com_85.jpg);margin-left:5px;}
+	.tvleft_content ul li h5{font-weight:normal;margin:0;padding:0}
+	.tv_left{float:left;width:706px;}
+	.tv_right{float:right;width:230px;}
+	.title2{width:100%;height:36px;background:url(../images/ww_360kan_com_31.jpg);position:relative;}
+	.title2 span{height:18px;line-height:18px;;display:inline-block;text-align:center;margin:8px 0 0 0;width:60px;font-size:18px;text-align:right;float:left;font-weight:normal;border-left:3px solid #389f0c;}
+	.title2 p{font-size:13px;margin:8px;padding:0;display:inline-block;float:right;height:18px;line-height:18px;width:50px;text-align:right;background:url(../images/ww_360kan_com_37.jpg) no-repeat left;}
+	.title2 ul{margin:10px 0 0 0;position:absolute;right:0px;width:160px;}
+	.title2 ul li{float:left;width:35px;height:24px;line-height:24px;border:#d9d9d9 1px solid;border-radius:3px;border-bottom:none;text-align:center;margin-left:3px;font-size:12px;background:#fff}
+	.title2 ul li.active{border-bottom:1px solid #fff;color:#4dad24}
+	#tvright_content{margin-top:20px;}
+	.rank{height:148px;border-bottom:1px solid #e3e3e3;width:230px;float:left;}
+	.rank ul{margin:-8px 0 0 0 ;height:128px;float:left;width:100px;}
+	.rank ul li{font-size:12px;height:21px;line-height:21px;margin:6px 0 0 8px;width:210px;white-space:nowrap;}
+	.rank ul li span{color:#fff;width:17px;height:16px;line-height:16px;background:#ff6d00;display:inline-block;text-align:center;margin-right:10px}
+	
+	.type{width:230px;margin-top:8px;float:left;clear:both;margin-bottom:10px;}
+	.type ul li{float:left;width:45px;font-size:13px;height:24px;line-height:24px;}
+	#tv_hot{margin-top:3px;height:180px;width:230px;float:left;}
+	#tv_hot span{height:18px;line-height:18px;;display:block;text-align:center;margin:8px 0 0 0;width:80px;font-size:18px;text-align:right;font-weight:normal;border-left:3px solid #389f0c;}
+	#tv_box{width:226px;height:123px;border:1px solid #e3e3e3;margin-top:10px;float:left;}
+	#tv_box_left{width:78px;float:left;}
+	#tv_box_left ul{width:78px;}
+	#tv_box_left ul li{width:77px;height:30px;border-right:1px solid #e3e3e3;border-bottom:1px solid #e3e3e3;line-height:30px;font-size:13px;padding-right:3px;background:#f7f7f7}
+	#tv_box_left ul li.active{border-right:1px solid #fff;background:#fff;color:#4dad24}
+	#tv_box_left ul li i{display:inline-block;margin:3px;line-height:30px;width:17px;height:17px;position:relative;top:3px;}
+	#tv_box_list{float:left;margin:0 0 0 10px;}
+	#tv_box_list ul{width:128px}
+	#tv_box_list ul li{height:30px;line-height:30px;font-size:13px;border-bottom:1px dashed #e3e3e3;}
+	#tvleft_bottom{width:706px;height:60px;background:#f7f7f7;float:left;margin-top:3px;position:relative}
+	#tvleft_bottom ul{margin:6px 0 0 5px;}
+	#tvleft_bottom ul li{float:left;font-size:13px;height:24px;line-height:24px;width:135px;}
+	#tvleft_bottom ul li span{height:7px;line-height:7px;;display:inline-block;text-align:center;margin:8px 5px 0 4px;position:relative;top:-2px;}
+	#hot_movie{float:left;}
+	#hot_movie ul{height:330px;margin:0px;}
+	#hot_movie ul li{width:230px;height:63px;margin-bottom:20px;}
+	#hot_movie ul li img {float:left;display:inline-block;margin-right:5px;}
+	#hot_movie ul li h4{margin:0 0 8px 0;padding:0px;font-weight:normal;float:left;display:block;font-size:13px;width:115px;}
+	#hot_movie ul li h4 span{float:right;display:block;color:#ff6d63;text-align:right;width:53px;background:url(../images/ww_360kan_com_85.jpg) no-repeat;}
+	#hot_movie ul li p{font-size:13px;color:#888888;margin:0 0 8px 0;display:block}
+	#movie_type{margin-top:3px;width:230px;margin-top:18px;float:left;}
+	.movie_type_title{float:left;}
+	.movie_type_title span{height:18px;line-height:18px;;display:block;text-align:center;margin:8px 0 0 0;width:80px;font-size:18px;text-align:right;font-weight:normal;border-left:3px solid #389f0c;}
+	.blank{width:230px;height:13px;border-bottom:1px solid #e3e3e3;float:left;}
+	.title3{width:100%;height:36px;position:relative;float:left;border-bottom:1px solid #e3e3e3}
+	.title3 span{height:18px;line-height:18px;;display:block;margin:8px 0 0 0;width:62px;font-size:18px;text-align:right;font-weight:normal;border-left:3px solid #389f0c;float:left;}
+	.title3 ul{margin:10px 0 0 0;position:absolute;right:0px;top:1px;width:160px;float:left;}
+	.title3 ul li{float:left;width:35px;height:24px;line-height:24px;border:#d9d9d9 1px solid;border-radius:3px;border-bottom:none;text-align:center;margin-left:3px;font-size:12px;background:#fff}
+	.title3 ul li.active{border-bottom:1px solid #fff;color:#4dad24}
+	#tvleft_bottom2{float:left;}
+	.title4{width:66px;height:23px;background:#3eaf0e;color:#fff;font-weight:bold;font-size:13px;line-height:23px;text-align:center;float:left;clear:both}
+	.content{width:706px;height:110px;float:left;margin-top:10px;}
+	.content ul{width:720px;}
+	.content li{float:left;margin-right:14px;width:130px;position:relative}
+	.content li span{display:block;position:absolute;width:60px;height:18px;line-height:18px;top:56px;right:0;background:#000;background-color:rgba(0,0,0,0.5);color:#fff;font-size:12px;text-align:center}
+	.content li p{margin:0;padding:0;font-size:13px;margin-top:10px;float:left}
+	.movie_tag{float:left}
+	.movie_tag li{height:30px;width:340px;font-size:13px;background:#f7f7f7;float:left;margin-right:10px;line-height:30px;padding-left:10px;margin-bottom:7px;}
+	#zongyi{margin-top:30px;height:375px;}
+	.content1{width:706px;float:left;margin-top:20px;}
+	.content1 ul{width:720px;}
+	.content1 li{float:left;margin-right:14px;width:166px;position:relative;text-align:center;margin-bottom:20px;}
+	.content1 li span{display:block;position:absolute;width:90px;height:23px;line-height:23px;top:75px;right:0;background:#000;background-color:rgba(0,0,0,0.5);color:#fff;font-size:12px;text-align:center}
+	.content1 li p{margin:0;padding:0;font-size:13px;margin-top:3px;}
+	.content1 h4{font-weight:normal;margin:0;padding:0;font-size:15px;margin-top:110px;display:block}
+	#zongyi_list{float:left;margin-top:10px;}
+	#zongyi_list ul{margin-top:20px;float:left}
+	#zongyi_list li{width:75px;height:24px;line-height:24px;font-size:13px;float:left}
+	#yule{margin-top:20px;float:left;height:315px;}
+	.movie_tag span{height:7px;line-height:7px;;display:inline-block;text-align:center;margin:8px 5px 0 4px;position:relative;top:-2px;}
+	#hot_cehua{margin-top:20px;}
+	#hot_cehua_content{width:230px;height:31px;background:#63bb2f;margin-top:1px;font-size:15px;line-height:31px;text-align:center;font-weight:bold;color:#fff;}
+	#hot_cehua li{font-size:13px;margin-top:10px;}
+	#dongman{margin-top:30px;float:left;width:980px;}
+	#dongman_list{float:left;margin-bottom:10px;}
+	#dongman_list ul{margin-top:20px;}
+	#dongman_list li{width:75px;height:24px;line-height:24px;font-size:13px;float:left}
+	.gengxin{width:706px;border-bottom:1px solid #e3e3e3;float:left;position:relative}
+	.gengxin ul{margin:-2px 0 0 0;position:absolute;right:0px;width:160px;}
+	.gengxin ul li{float:left;width:35px;height:24px;line-height:24px;border:#d9d9d9 1px solid;border-radius:3px;border-bottom:none;text-align:center;margin-left:3px;font-size:12px;background:#fff}
+	.gengxin ul li.active{border-bottom:1px solid #fff;color:#4dad24}}
+	#pig{float:left;width:230px;background:#0CC;}
+	#jilupian{float:left;width:980px;margin-top:20px;}
+	#meinv{float:left;width:980px;margin-top:20px;}
+	#hot_cehua h5{margin-top:8px;padding:0;font-weight:normal;font-size:12px;}
+	.tv_type{float:left;margin-top:40px;width:980px}
+	.web_content ul {width:980px;width:1000px;margin-top:12px;}
+	.web_content ul li{float:left;margin-right:26px;margin-top:12px;}
+	#bottom{width:1360;height:80px;margin:0 auto;text-align:center;}
+	#bottom h3{font-size:13px;font-weight:normal;clear:both;}
+	#bottom p{font-size:13px;font-weight:normal;color:#999}
+	#nav1 ul li.active{border:1px solid #34910d;border-radius:3px;border-bottom:none;background:#fff;color:#389f0c;height:35px;line-height:35px;margin-top:-8px;position:relative}

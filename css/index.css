@@ -71,16 +71,16 @@
 		.toright{width:10%;height:100%;position: absolute;right:0;top:0;}
 		.toleft span,.toright span{cursor: pointer;}
 		.toleft img,.toright img{width:50%;height:10%;position: absolute;left: 50%;top:50%;margin:-5% 0 0 -25%; }
-		.works_ul{height:100%;width:100%;position: absolute;top:0;display: none;}
-		.leftDiv{width:49.5%;left:-400px;top:0px;height:100%;position: absolute;opacity: 0;filter: alpha(opacity:0);overflow: hidden;}
+		.works_ul{height:100%;width:100%;top:0;display: none;}
+		.leftDiv{width:49.5%;left:-400px;top:0px;height:100%;position: absolute;opacity: 0;filter: alpha(opacity:0);overflow: hidden;* margin-left:-70px;}
 		.leftDiv ul{height:100%;}
 		.leftDiv li{height:100%;}
 		.leftDiv img{width:100%;height:100%;position: absolute;top:0;left:0;}
 		.leftDiv span{position: absolute;display:block;width:100%;height:100%;line-height:100%;top:-225px;left:0;background: #00a99d;z-index: 999;opacity:0;filter: alpha(opacity:0)}
 
-		.rightDiv{width:49.5%;height:100%;position: absolute;right:-400px;top:0px;opacity:0;filter: alpha(opacity:0)}
-		.rightDiv ul{width: 100%;height:100%;position: relative;}
-		.rightDiv li{float: left;width: 50%;height:50%;position: relative;cursor: pointer;overflow: hidden;}
+		.rightDiv{width:49.5%;height:100%;position: absolute;right:-400px;top:0px;opacity:0;filter: alpha(opacity:0);}
+		.rightDiv ul{width: 100%;height:100%;position: relative;* margin-left:-130px;}
+		.rightDiv li{float: left;width: 49%;height:50%;position: relative;cursor: pointer;overflow: hidden;}
 		.rightDiv li img{width:100%;height:100%;display: block;position: absolute;top:0;left:0;}
 		.rightDiv li span{position: absolute;width:100%;height:100%;line-height:100%;top:-225px;left:0;background: #00a99d;z-index: 999;opacity: 0;filter: alpha(opacity:0)}
 		.leftDiv li span:before,.rightDiv li span:before{content: '';display: inline-block;vertical-align: middle;height:100%;
@@ -90,7 +90,7 @@
 		.first_l{position:absolute;left:0px;opacity: 1;filter: alpha(opacity:100); }
 		.first_r{position:absolute;right:0px;opacity: 1;filter: alpha(opacity:100); }
 		.resume{width:90%;height:75%;margin:0 5%;position: relative;}
-		.resume_left{width:50%;height: 100%;background:#2a2a2a;position: relative;float: left;}
+		.resume_left{width:49.5%;height: 100%;background:#2a2a2a;position: relative;float: left;}
 		.resume_right{width:50%;height: 100%;position: relative;float: right}
 		.resume_left h2{color:#fff;font-weight: bold;font-size:35px;padding-top:35%;}
 		.resume_left h4{color:#666;font-size:20px;}
@@ -132,7 +132,7 @@
 		    .first_l{position:absolute;left:0px;opacity: 1;filter: alpha(opacity:100); }
 			.first_r{position:absolute;right:0px;opacity: 1;filter: alpha(opacity:100); }
 			.adage{width:100%;font-size: 14px;color: #000;line-height: 1.5}
-			.contact li{width:100%;height:50px;background: #f0f0f0;float: left;margin:0.7%; }
+			.contact li{width:100%;height:50px;line-height:50px;background: #f0f0f0;float: left;margin:0.7%; }
 			.contact li span{display: block;width:32px;height:32px;line-height:32px;margin:2%;float: left;}
 			.resume_left{width:100%;height: 30%;background:#2a2a2a;position: relative;float: left;}
 			.resume_right{width:100%;height: 70%;position: relative;float: right}
