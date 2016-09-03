@@ -76,13 +76,13 @@
 		.leftDiv ul{height:100%;}
 		.leftDiv li{height:100%;}
 		.leftDiv img{width:100%;height:100%;position: absolute;top:0;left:0;}
-		.leftDiv span{position: absolute;display:block;width:100%;height:100%;line-height:100%;top:-225px;left:0;background: #00a99d;z-index: 999;opacity:0;filter: alpha(opacity:0)}
+		.leftDiv span{position: absolute;display:block;width:100%;height:100%;line-height:100%;top:-225px;left:0;background: #666;z-index: 999;opacity:0;filter: alpha(opacity:0)}
 
 		.rightDiv{width:49.5%;height:100%;position: absolute;right:-400px;top:0px;opacity:0;filter: alpha(opacity:0);}
 		.rightDiv ul{width: 100%;height:100%;position: relative;* margin-left:-130px;}
 		.rightDiv li{float: left;width: 49%;height:50%;position: relative;cursor: pointer;overflow: hidden;}
 		.rightDiv li img{width:100%;height:100%;display: block;position: absolute;top:0;left:0;}
-		.rightDiv li span{position: absolute;width:100%;height:100%;line-height:100%;top:-225px;left:0;background: #00a99d;z-index: 999;opacity: 0;filter: alpha(opacity:0)}
+		.rightDiv li span{position: absolute;width:100%;height:100%;line-height:100%;top:-225px;left:0;background: #666;z-index: 999;opacity: 0;filter: alpha(opacity:0)}
 		.leftDiv li span:before,.rightDiv li span:before{content: '';display: inline-block;vertical-align: middle;height:100%;
 		}
 		.leftDiv li span p,.rightDiv li span p{display: inline-block;font-size: 25px;font-weight:bold;font-family:Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;color:#fff;}

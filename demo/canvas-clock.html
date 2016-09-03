@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            background: #000;
+        }
+        canvas{
+            background: #fff;
+        }
+        span{
+            font-size:100px;
+            color: #fff;
+        }
+    </style>
+    <script>
+        function rnd(n,m){
+            return parseInt(Math.random()*(m-n))+n;
+        }
+        function d2a(n){
+            return n*Math.PI/180;
+        }
+        window.onload = function () {
+            var oC=document.querySelector('#c1');
+
+            var gd=oC.getContext('2d');
+
+            var cx=200;
+            var cy=200;
+
+            function drawP(start, end, r, color){
+                start=start-90;
+                end=end-90;
+                gd.beginPath();
+                gd.lineWidth=20;
+                gd.strokeStyle=color;
+                gd.arc(cx, cy, r, d2a(start), d2a(end), false);
+                gd.stroke();
+            }
+            function clock(){
+                gd.clearRect(0,0,oC.width,oC.height);
+                gd.textAlign='center';
+                gd.font='30px 楷体';
+                gd.fillText('时钟', 200, 80);
+                var oDate=new Date();
+                var h=oDate.getHours();
+                var m=oDate.getMinutes();
+                var s=oDate.getSeconds();
+                var ms=oDate.getMilliseconds();
+
+                drawP(0, ((h%12)*30+m/60*30), 60, '#00CCFF');
+                drawP(0, m*6+s/60*6, 80, '#CC99CC');
+                drawP(0, s*6+ms/1000*6, 100, '#006666');
+
+                gd.font='16px 楷体';
+                gd.fillText(h+':'+m+':'+s, 200, 200);
+            }
+            clock();
+            setInterval(clock, 16);
+
+        };
+    </script>
+</head>
+<body>
+    <canvas id="c1" width="800" height="600">
+        <span>您的浏览器太Low了</span>
+    </canvas>
+</body>
+</html>

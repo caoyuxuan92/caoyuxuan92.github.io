@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            overflow: hidden;
+        }
+        canvas{
+            background: #000;
+        }
+        span{
+            font-size:100px;
+            color: #fff;
+        }
+    </style>
+    <script>
+        function rnd(n,m){
+            return parseInt(Math.random()*(m-n))+n;
+        }
+        window.onload = function () {
+            var oC=document.querySelector('#c1');
+
+            var gd=oC.getContext('2d');
+            var winW=document.documentElement.clientWidth;
+            var winH=document.documentElement.clientHeight;
+            oC.width=winW;
+            oC.height=winH;
+
+            var N=10;
+            var aPoint=[];
+            var oldPoint=[];
+            var LEN=50;
+
+            for(var i=0; i<N; i++){
+                aPoint[i]={
+                    x: rnd(0, winW),
+                    y: rnd(0, winH),
+                    iSpeedX: rnd(-10,10),
+                    iSpeedY: rnd(-10,10)
+                }
+            }
+
+            setInterval(function(){
+                // 擦除画布
+                gd.clearRect(0, 0, oC.width, oC.height);
+                // 画点
+                for(var i=0; i<aPoint.length; i++){
+                    aPoint[i].x+=aPoint[i].iSpeedX;
+                    aPoint[i].y+=aPoint[i].iSpeedY;
+
+                    drawPoint(aPoint[i].x, aPoint[i].y);
+                    // 限制范围
+                    if(aPoint[i].y<0){
+                        aPoint[i].iSpeedY*=-1;
+                    }
+                    if(aPoint[i].x<0){
+                        aPoint[i].iSpeedX*=-1;
+                    }
+                    if(aPoint[i].y>winH){
+                        aPoint[i].iSpeedY*=-1;
+                    }
+                    if(aPoint[i].x>winW){
+                        aPoint[i].iSpeedX*=-1;
+                    }
+                }
+                // 点连线
+                gd.strokeStyle='#fff';
+                gd.moveTo(aPoint[0].x, aPoint[0].y);
+                for(var i=1; i<aPoint.length; i++){
+                    gd.lineTo(aPoint[i].x, aPoint[i].y);
+                }
+                gd.closePath();
+                gd.stroke();
+
+                // 存尾巴
+                var arr=[];
+                for(var i=0; i<aPoint.length; i++){
+                    arr[i]={
+                        x: aPoint[i].x,
+                        y: aPoint[i].y
+                    }
+                }
+                oldPoint.push(arr);
+                if(oldPoint.length>LEN){
+                    oldPoint.shift();
+                }
+                // 画尾巴
+                // oldPoint=[[{x: , y: },{x: , y: }],[],[],[],[]];
+                for(var i=0; i<oldPoint.length; i++){
+                    gd.beginPath();
+                    gd.strokeStyle='rgba(255,255,255,'+i/oldPoint.length+')';
+                    gd.moveTo(oldPoint[i][0].x, oldPoint[i][0].y);
+                    for(var j=1; j<oldPoint[i].length; j++){
+                        gd.lineTo(oldPoint[i][j].x, oldPoint[i][j].y);
+                    }
+                    gd.closePath();
+                    gd.stroke();
+                }
+            }, 16);
+
+            // 画点函数
+            function drawPoint(x, y){
+                var pW=1;
+                var pH=1;
+                gd.fillStyle='#fff';
+                gd.beginPath();
+                gd.fillRect(x-pW/2, y-pH/2, pW, pH);
+            }
+        };
+    </script>
+</head>
+<body>
+    <canvas id="c1" width="800" height="600">
+        <span>您的浏览器太Low了</span>
+    </canvas>
+</body>
+</html>
